@@ -33,7 +33,8 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('#billing_phone').clear().type('47984695420')
         cy.get('#terms').click()
         cy.get('#place_order').click()
-        cy.get('.woocommerce-error').should('exist')
+        cy.wait(5000)
+        cy.get('.woocommerce-order-overview__order > strong').should('exist')
   });
 
 
